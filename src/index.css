@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: ui-monospace, "JetBrains Mono", "Roboto Mono", Consolas, monospace;
+  --font-sans: -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+
+  --color-tomato: #e8604c;
+  --color-tomato-soft: #fdede9;
+  --color-leaf: #5fa777;
+  --color-leaf-soft: #eaf5ee;
+  --color-cream: #fffbf7;
+  --color-ink: #2b2521;
+  --color-ink-muted: #8a8078;
+  --color-line: #efe6de;
+}
+
+:root {
+  --bg: var(--color-cream);
+  --surface: #ffffff;
+  --accent: var(--color-tomato);
+  --accent-soft: var(--color-tomato-soft);
+  --text: var(--color-ink);
+  --text-muted: var(--color-ink-muted);
+  --line: var(--color-line);
+}
+
+:root.dark {
+  --bg: #1b1816;
+  --surface: #232019;
+  --accent: #ff7a63;
+  --accent-soft: #2a1b18;
+  --text: #f3ece6;
+  --text-muted: #9c948c;
+  --line: #33302c;
+}
+
+:root[data-mode="break"] {
+  --accent: var(--color-leaf);
+  --accent-soft: var(--color-leaf-soft);
+}
+
+:root.dark[data-mode="break"] {
+  --accent: #7ed6a0;
+  --accent-soft: #132018;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
